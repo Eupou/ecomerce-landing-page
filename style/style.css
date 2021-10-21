@@ -23,9 +23,10 @@ li, a {
 
 .container-cabecalho {
     width: 100%;
-    position: sticky;
+    position: fixed;
     z-index: 1;
     top: 0;
+    bottom: 5px;
     height: 50px; 
     background-color: white;
 } 
