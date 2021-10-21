@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+html, body {
+    overflow-x: hidden;
+    background-color: #fafafa;
+}
+
+li, a {
+    list-style: none;
+    text-decoration: none;
+}
+
+.container-conteudo {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container-cabecalho {
+    width: 100%;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    height: 50px; 
+    background-color: white;
+} 
+
+.container-links {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulo-logo {
+    margin-left: 12px;
+    color: rgb(37, 36, 36);
+}
+
+.menu-responsivo {
+    display: none;
+}
+
+.menu-hamburguer1 {
+    background-color: black;
+    margin-top: 5px;
+    width: 15px;
+    height: 2px;
+}
+
+.menu-hamburguer2 {
+    background-color: black;
+    margin-top: 5px;
+    width: 15px;
+    height: 2px;
+}
+
+.menu-hamburguer3 {
+    background-color: black;
+    margin-top: 5px;
+    width: 15px;
+    height: 2px;
+}
+
+.lista-links {
+    display: flex;
+    transition: 0.2s ease-in-out;
+}
+
+.link-cabecalho {
+    margin-right: 20px;
+    font-size: 13pt;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color: black;
+}
+
+.img-main {
+    display: flex;
+    width: 100%;
+    transition: 0.6s ease-in-out;
+}
+
+.img-main img {
+    width: 100%;
+}
+
+.produtos {
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+}
+
+.titulo-produtos {
+    margin-left: 20px;
+}
+
+.container-img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.descricao {
+    font-family: 'Roboto', sans-serif;
+}
+
+.img-produto img {
+    margin-top: 15px;
+    width: 31vw;
+}
+
+.img-produto:hover img {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.footer {
+    margin-top: 80px;
+    width: 100vw;
+    height: 110px;
+    background-color: rgb(20, 20, 20);
+}
+
+.container-footer {
+    text-align: center;
+    color: #fafafa;
+}
+
+.titulo-footer {
+    margin-top: 20px;
+}
+
+.contato-lista {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.link-footer {
+    margin-left: 20px;
+    color: #e7e2e2;
+    font-size: 17px;
+}
+
+.link-footer:hover {
+    cursor: pointer;
+    color: white;
+}
+
+@media (max-width: 768px){
+    .descricao {
+        font-size: 12.5px;
+    }
+    .titulo-produtos {
+        margin-left: 12px;
+    }
+}
+
+@media (max-width: 697px) {
+    .img-produto img {
+        width: 45vw;
+    }
+    .titulo-produtos {
+        margin-left: 12px;
+    }
+}
+
+@media (max-width: 425px) {
+   .lista-links {
+     position: absolute;
+     z-index: 500;
+     top: 50px;
+     right: 0;
+     width: 50vw;
+     height: 90vh;
+     background-color: #fafafa;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-around;
+     transform: translateX(50vw);
+   }
+
+   .lista-links.ativado {
+       top: 50px;
+       transform: translateX(0);
+   }
+
+   .container-links {
+       margin-right: 10px;
+   }
+
+   .menu-responsivo {
+        display: block;
+        transition: 0.5s ease-in-out;
+    }
+
+   .menu-responsivo div{
+        transition: 0.1s ease-in-out;
+    }
+
+    .menu-responsivo.ativado .menu-hamburguer1 {
+        transform: translateY(5px) rotate(45deg);
+    }
+
+    .menu-responsivo.ativado .menu-hamburguer2 {
+        transform: translateY(-2px) rotate(-45deg);
+    }
+
+    .menu-responsivo.ativado .menu-hamburguer3 {
+        opacity: 0;
+    }
+
+    .footer {
+        height: 100%;
+    }
+
+    .titulo-footer {
+        font-size: 16px;
+    }
+
+    .contato-lista {
+        flex-direction: column;
+        
+    }
+
+    .li {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 320px) {
+    .img-produto img {
+        width: 90vw;
+    }
+
+    .titulo-produtos {
+        margin-left: 12px;
+    }
+
+    .descricao {
+        font-size: 18px;
+    }
+
+    .titulo-footer {
+        font-size: 15px;
+    }
+}
