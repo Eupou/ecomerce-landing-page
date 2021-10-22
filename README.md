@@ -11,3 +11,21 @@
 <li>- [ ] Na área de compra usar esse layout como referência <a href="https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6">aqui</a></li>
 <li>- [ ] Colocar a API dos correios, obs: esse ainda é muito díficil pra mim</li>
 </ul>
+
+# Correções e bugs
+
+<ul>
+  <li>Correção do menu</li>
+  <li>Mudança no href que as imagens levam</li>
+  <li>Alreção no javascript da segunda etapa da compra</li>
+</ul>
+
+# Atualizações
+
+### Conclusão da estilização da primeira etapa da compra e mudanças no index.html
+<ul>
+  <li>Adicionei os "a" nas imagens</li>
+  <li>Conclui a base do html da primeira de compra</li> 
+  <li>Estilização da primeira etapa de compra</li>
+  <li>Alteração no js da primeira etapa de compra</li>
+</ul>
