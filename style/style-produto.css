@@ -25,6 +25,11 @@
 .imgs-secundarias img {
     width: 160px;
     border-radius: 10px;
+    cursor: pointer;
+}
+
+.imgs-secundarias img.selecionada {
+    opacity: 0.6;
 }
 
 .container-info {
@@ -53,18 +58,49 @@
 
 .botao-aumenta-quantidade {
     display: flex;
-    justify-content: space-around;
+  
     align-items: center;
-    background-color: rgb(247, 243, 243);
+    
     font-size: 19px;
     width: 110px;
     height: 40px;
     border-radius: 5px;
 }
 
+.quantidade-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 100%; 
+    background-color: rgb(247, 243, 243);
+}
+
 .diminui-item, 
 .aumenta-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(247, 243, 243);
     color: rgb(255, 140, 8);
+    height: 100%; 
+    width: 36px;
+}
+
+.diminui-item:hover, 
+.aumenta-item:hover  {
+    cursor: pointer;
+    background-color: rgb(214, 212, 212);
+}
+
+.diminui-item {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.aumenta-item {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .btn-compra {
