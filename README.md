@@ -17,10 +17,16 @@
 <ul>
   <li>Correção do menu</li>
   <li>Mudança no href que as imagens levam</li>
-  <li>Alreção no javascript da segunda etapa da compra</li>
+  <li>Alteração no javascript da segunda etapa da compra</li>
 </ul>
 
 # Atualizações
+
+### Adiciona o html
+
+<ul>
+  <li>Adição de todos os html de cada página</li>
+</ul>
 
 ### Conclusão da estilização da primeira etapa da compra e mudanças no index.html
 <ul>
