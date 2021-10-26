@@ -30,3 +30,42 @@ function aumentaQuantidadeItem() {
     quantidadeItem++
     resItem.innerHTML = quantidadeItem
 }
+
+function addSetas() {
+    imgPrincipal.innerHTML += `
+        <div class="setaEsquerda"></div>
+        <div class="setaDireita"></div>
+    `
+}
+
+addSetas()
+
+let setaEsquerda = document.querySelector('.setaEsquerda')
+let setaDireita = document.querySelector('.setaDireita')
+
+setaEsquerda.addEventListener('click', moveIgmParaEsquerda)
+setaDireita.addEventListener('click', moveIgmParaDireita)
+
+function moveIgmParaDireita() {
+    let imPrincipal = document.querySelector('.img-principal img')
+    let imgSecondaria = document.querySelectorAll('.imgs-secundarias img')
+    if (imPrincipal.src == imgSecondaria[0].src) {
+        imPrincipal.src = imgSecondaria[1].src
+    } else if(imPrincipal.src == imgSecondaria[1].src) {
+        imPrincipal.src = imgSecondaria[2].src
+    } else {
+        imPrincipal.src = imgSecondaria[0].src
+    }
+}
+
+function moveIgmParaEsquerda() {
+    let imPrincipal = document.querySelector('.img-principal img')
+    let imgSecondaria = document.querySelectorAll('.imgs-secundarias img')
+    if (imPrincipal.src == imgSecondaria[0].src) {
+        imPrincipal.src = imgSecondaria[2].src
+    } else if(imPrincipal.src == imgSecondaria[2].src) {
+        imPrincipal.src = imgSecondaria[1].src
+    } else {
+        imPrincipal.src = imgSecondaria[0].src
+    }
+}
