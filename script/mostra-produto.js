@@ -69,3 +69,39 @@ function moveIgmParaEsquerda() {
         imPrincipal.src = imgSecondaria[0].src
     }
 }
+
+let modalExiste = false
+let btnComprar = document.querySelector('.botao-finaliza-compra') 
+btnComprar.innerHTML = `<div class="btn-compra">comprar</div>`
+
+
+let inputCompra = document.querySelector('.btn-compra')
+inputCompra.addEventListener('click', addModal)
+
+function addModal() {
+    if (modalExiste == false) {
+        btnComprar.innerHTML += `
+        <div class="modal is-active">
+            <div class="container-menu1">
+                <div class="menu">
+                    <div class="info-pessoal">
+                        <input id="nome" type="text">
+                        <input id="numero-cartao" type="number" onKeyPress="if(this.value.length==5) return false;">
+                        <input id="codigo-cartao" type="number" onKeyPress="if(this.value.length==3) return false;">
+                    </div>
+                    <div class="container-tipo-cartao">
+                        <input id="credito" type="radio" name="cartao" checked>
+                        <label for="credito">crédito</label>
+                        
+                        <input id="debito" type="radio" name="cartao">
+                        <label for="debito">débito</label>
+                    </div>
+                </div>
+                <div class="endereco">
+                </div>
+            </div>
+        </div>`
+        modalExiste = true
+        a()
+    }
+}

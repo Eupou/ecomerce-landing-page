@@ -7,6 +7,10 @@ body {
   font-family: sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container-conteudo {
   display: flex;
   justify-content: space-evenly;
@@ -89,13 +93,31 @@ body {
 }
 
 .btn-compra {
-  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
   height: 50px;
   width: 250px;
   border-radius: 10px;
   background-color: rgb(255, 145, 1);
   color: white;
   font-size: 20px;
+}
+
+.container-menu1 {
+  display: flex;
+  justify-content: center;
+  width: 800px;
+  height: 500px;
+  border: 1px solid rgb(99, 99, 99);
+  border-radius: 10px;
+}
+
+.info-pessoal {
+  display: flex;
+  background-color: black;
+  flex-direction: column;
 }
 
 @media (max-width: 1024px) {
@@ -123,6 +145,23 @@ body {
   .valor-produto {
     font-size: 20px;
   }
+}
+
+.modal {
+  position: absolute;
+  z-index: 10000;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.is-active {
+  display: flex;
 }
 
 @media (max-width: 768px) {
