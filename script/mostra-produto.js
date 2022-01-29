@@ -105,3 +105,13 @@ function addModal() {
         a()
     }
 }
+
+const MENU_RESPONSIVO = document.querySelector('.menu-responsivo')
+const LISTA_LINKS = document.querySelector('.lista-links')
+
+MENU_RESPONSIVO.addEventListener('click', acionarMenu)
+
+function acionarMenu() {
+    LISTA_LINKS.classList.toggle('ativado')
+    MENU_RESPONSIVO.classList.toggle('ativado')
+} 

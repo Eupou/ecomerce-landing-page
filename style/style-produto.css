@@ -5,10 +5,73 @@
 
 body {
   font-family: sans-serif;
+  background-color: #fafafa;
 }
 
+li,
 a {
+  list-style: none;
   text-decoration: none;
+}
+
+.container-cabecalho {
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  bottom: 5px;
+  height: 50px;
+  background-color: white;
+}
+
+.container-links {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titulo-logo {
+  margin-left: 12px;
+  color: rgb(37, 36, 36);
+}
+
+.menu-responsivo {
+  display: none;
+}
+
+.menu-hamburguer1 {
+  background-color: black;
+  margin-top: 5px;
+  width: 15px;
+  height: 2px;
+}
+
+.menu-hamburguer2 {
+  background-color: black;
+  margin-top: 5px;
+  width: 15px;
+  height: 2px;
+}
+
+.menu-hamburguer3 {
+  background-color: black;
+  margin-top: 5px;
+  width: 15px;
+  height: 2px;
+}
+
+.lista-links {
+  display: flex;
+  transition: 0.2s ease-in-out;
+}
+
+.link-cabecalho {
+  margin-right: 20px;
+  font-size: 13pt;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  color: black;
 }
 
 .container-conteudo {
@@ -30,7 +93,7 @@ a {
 
 .img-principal img {
   width: 501px;
-  max-height: 332px;
+  height: 332px;
   border-radius: 10px;
 }
 
@@ -41,7 +104,9 @@ a {
 }
 
 .imgs-secundarias img {
+  cursor: pointer;
   width: 164px;
+  height: 100%;
   border-radius: 10px;
 }
 
@@ -86,6 +151,7 @@ a {
 .diminui-item,
 .aumenta-item {
   color: rgb(255, 145, 1);
+  cursor: pointer;
 }
 
 .botao-finaliza-compra {
@@ -103,6 +169,7 @@ a {
   background-color: rgb(255, 145, 1);
   color: white;
   font-size: 20px;
+  border: transparent;
 }
 
 .container-menu1 {
@@ -170,7 +237,7 @@ a {
   }
   .container-conteudo {
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: 150px;
   }
 
   .texto-info {
@@ -259,5 +326,51 @@ a {
   .setaEsquerda,
   .setaDireita {
     top: 100px;
+  }
+}
+
+@media (max-width: 425px) {
+  .lista-links {
+    position: absolute;
+    z-index: 500;
+    top: 50px;
+    right: 0;
+    width: 50vw;
+    height: 90vh;
+    background-color: #fafafa;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(50vw);
+  }
+
+  .lista-links.ativado {
+    top: 50px;
+    transform: translateX(0);
+  }
+
+  .container-links {
+    margin-right: 10px;
+  }
+
+  .menu-responsivo {
+    display: block;
+    transition: 0.5s ease-in-out;
+  }
+
+  .menu-responsivo div {
+    transition: 0.1s ease-in-out;
+  }
+
+  .menu-responsivo.ativado .menu-hamburguer1 {
+    transform: translateY(5px) rotate(45deg);
+  }
+
+  .menu-responsivo.ativado .menu-hamburguer2 {
+    transform: translateY(-2px) rotate(-45deg);
+  }
+
+  .menu-responsivo.ativado .menu-hamburguer3 {
+    opacity: 0;
   }
 }
