@@ -1,3 +1,8 @@
+/*  Só uma observação, esse projeto apresenta um código que não está tão bem feito.
+    Esse foi um dos primeiros projetos que eu fiz, mas eu não tinha finalizado e resolvi,
+    depois de muito tempo, continuar ele, graças a isso você vai percerber inconsistências
+    na forma como ele foi escrito
+*/
 const IMGS_SECUNDARIAS = document.querySelectorAll('.imgs-secundarias img')
 const IMG_SELECIONADA = document.querySelector('.imgs-secundarias .img-1 img')
 const DIMINUI_ITEM = document.querySelector('.diminui-item')
@@ -72,38 +77,44 @@ function moveIgmParaEsquerda() {
 
 let modalExiste = false
 let btnComprar = document.querySelector('.botao-finaliza-compra') 
-btnComprar.innerHTML = `<div class="btn-compra">comprar</div>`
+btnComprar.innerHTML = `<div class="btn-compra" onclick="openModal()">comprar</div>`
 
 
 let inputCompra = document.querySelector('.btn-compra')
 inputCompra.addEventListener('click', addModal)
 
+
 function addModal() {
+    // let conteudo = document.querySelector('.container-conteudo')
     if (modalExiste == false) {
-        btnComprar.innerHTML += `
+        document.body.innerHTML += `
         <div class="modal is-active">
             <div class="container-menu1">
+                <div class="x">x</div>
                 <div class="menu">
                     <div class="info-pessoal">
-                        <input id="nome" type="text">
-                        <input id="numero-cartao" type="number" onKeyPress="if(this.value.length==5) return false;">
-                        <input id="codigo-cartao" type="number" onKeyPress="if(this.value.length==3) return false;">
+                        <p class="pessoal-nome">Coloque seu nome:</p>
+                        <input id="nome" type="text" placeholder="Seu nome vem aqui!">
                     </div>
-                    <div class="container-tipo-cartao">
-                        <input id="credito" type="radio" name="cartao" checked>
-                        <label for="credito">crédito</label>
-                        
-                        <input id="debito" type="radio" name="cartao">
-                        <label for="debito">débito</label>
-                    </div>
+                    <div class="btn-enviar">Comprar</div>
                 </div>
-                <div class="endereco">
-                </div>
+                <div class="endereco"></div>
             </div>
         </div>`
-        modalExiste = true
-        a()
-    }
+                modalExiste = true
+                document.querySelector('.btn-enviar').addEventListener('click', sendMsg)
+    } 
+    const BTN_X = document.querySelector('.x')
+    BTN_X.addEventListener("click", closeModal)
+   
+}
+
+function closeModal() {
+    document.querySelector('.modal').classList.remove('is-active')
+}
+
+function openModal() {
+    document.querySelector('.modal').classList.add('is-active')
 }
 
 const MENU_RESPONSIVO = document.querySelector('.menu-responsivo')
@@ -115,3 +126,32 @@ function acionarMenu() {
     LISTA_LINKS.classList.toggle('ativado')
     MENU_RESPONSIVO.classList.toggle('ativado')
 } 
+
+
+// Mostra a mensagem  de compra finalizada
+
+
+function sendMsg() {
+    let NAME_INPUT = document.querySelector('#nome')
+
+    if (NAME_INPUT.value != "") {
+        const MODAL = document.querySelector('.menu')
+
+        MODAL.innerHTML = `
+        <div class="confirmacao">
+            <div>
+                Muito obrigado por comprar com a gente! 
+            </div>
+            <div>
+                Pode confiar que seu produto vai chegar, ${NAME_INPUT.value}
+            </div>
+        </div>
+    `
+    } else {
+        NAME_INPUT.value = "Coloque seu nome!"
+        NAME_INPUT.style.border = "3px solid red"
+        console.log({ NAME_INPUT })
+    }
+    
+}
+
